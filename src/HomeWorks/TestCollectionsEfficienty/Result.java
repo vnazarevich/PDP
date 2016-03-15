@@ -1,4 +1,4 @@
-package collections;
+package HomeWorks.TestCollectionsEfficienty;
 
 public class Result {
 	private int count;

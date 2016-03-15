@@ -1,4 +1,4 @@
-package collections;
+package HomeWorks.TestCollectionsEfficienty;
 
 import java.util.*;
 
