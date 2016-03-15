@@ -1,5 +1,6 @@
 package collections;
 
+import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -39,9 +40,22 @@ public class Map_Examples {
 		//mapForeach(hashMap);
 		System.out.println(linkedHashMap);
 		System.out.println(treeMap);
-		testAccessOrder();
+		//testAccessOrder();
+		testWeakMap(weakMap);
 		
 	//	hashMap.
+		
+	}
+
+	private static void testWeakMap(Map<Integer, String> weakMap2) {
+		Integer key = 10000;
+		System.out.println( key.getClass().getName());
+		for (Integer i: weakMap2.keySet()){
+			System.out.println( i.getClass().getName());
+		};
+		WeakReference<Integer> weak_i = new WeakReference<Integer>(100000);
+		System.out.println(weak_i instanceof WeakReference);
+		System.out.println( weak_i.getClass().getName());
 		
 	}
 
@@ -61,7 +75,6 @@ public class Map_Examples {
 		System.out.println(linkedHashMap);
 		linkedHashMap.get(5);
 		System.out.println(linkedHashMap);
-		
 		
 	}
 
