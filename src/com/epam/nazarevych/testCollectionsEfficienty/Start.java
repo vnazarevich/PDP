@@ -1,8 +1,10 @@
-package HomeWorks.TestCollectionsEfficienty;
+package com.epam.nazarevych.testCollectionsEfficienty;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
-public class TempHW {
+public class Start {
+
 	private final static int DEFAULT_VALUE = 1;
 	private static SpeedTester speedTester; 
 	private static ArrayList arrayList;
@@ -16,23 +18,19 @@ public class TempHW {
 			arrayList.add(DEFAULT_VALUE);
 		}
 		
-		//List linkedList = new LinkedList();	
-		
-		
+		//List linkedList = new LinkedList();			
 		
 	}
-
 	
 	public static void main(String[] args) {
 		initialisation(100);
 		speedTester.testList(arrayList, 1);
 		speedTester.testList(arrayList, 100);
-		speedTester.testList(arrayList, 1000000);
+		speedTester.testList(arrayList, 100000);
 		
 		speedTester.getResults();
+		System.out.println("L");
 		
 	}
-
-	
 
 }

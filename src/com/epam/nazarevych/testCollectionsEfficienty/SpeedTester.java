@@ -1,4 +1,4 @@
-package HomeWorks.TestCollectionsEfficienty;
+package com.epam.nazarevych.testCollectionsEfficienty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class SpeedTester {
 	}
 
 	private void testListAdd(List list, int count) {
-		System.out.println(list.getClass().getName());
+		//System.out.println(list.getClass().getName());
 		Result result = new Result(list.getClass().getName(), count);
 		result.setTimeAddInTail(testAddingInTail(list, count));
 		result.setTimeAddInMiddle(testAddingInMiddle(list, count));

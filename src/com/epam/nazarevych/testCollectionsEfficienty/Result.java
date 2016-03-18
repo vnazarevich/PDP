@@ -1,4 +1,4 @@
-package HomeWorks.TestCollectionsEfficienty;
+package com.epam.nazarevych.testCollectionsEfficienty;
 
 public class Result {
 	private int count;
@@ -6,8 +6,10 @@ public class Result {
 	private long timeAddInTail;
 	private long timeAddInMiddle;
 	private long timeAddInHead;
+	//private long
 	
-	public Result(String collectionClass, int count) {
+	
+	public Result (String collectionClass, int count) {
 		this.count = count;
 		this.collectionClass = collectionClass;
 	}
