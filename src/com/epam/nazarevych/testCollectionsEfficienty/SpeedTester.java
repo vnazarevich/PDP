@@ -73,6 +73,13 @@ public class SpeedTester {
 	
 	private long testRemovingList(List list, int count, int index) {
 		List testList = list;
+		if (index == (list.size()-1)){
+			long timeStart = System.nanoTime();
+			for (int i = 0; i < count; i++) {
+				testList.remove(index--);
+			}
+			return  System.nanoTime() - timeStart;
+		}
 		long timeStart = System.nanoTime();
 		for (int i = 0; i < count; i++) {
 			testList.remove(index);
