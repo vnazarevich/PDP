@@ -1,6 +1,7 @@
 package com.epam.nazarevych.testCollectionsEfficienty;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -23,62 +24,58 @@ public class SpeedTester {
 		//System.out.println(list.getClass().getName());
 		Result result = new Result(list.getClass().getName(), count);
 		
-		result.setTimeAddInHead(testAdding(list, count, 0));
-		result.setTimeAddInMiddle(testAdding(list, count, list.size()/2));
-		result.setTimeAddInTail(testAdding(list, count, list.size()-1));
+		result.setTimeAddInHead(testAddingList(list, count, 0));
+		result.setTimeAddInMiddle(testAddingList(list, count, list.size()/2));
+		result.setTimeAddInTail(testAddingList(list, count, list.size()-1));
 		
-		result.setTimeSetInHead(testSeting(list, count, 0));
-		result.setTimeSetInMiddle(testSeting(list, count, list.size()/2));
-		result.setTimeSetInTail(testSeting(list, count, list.size()-1));
+		result.setTimeSetInHead(testSetingList(list, count, 0));
+		result.setTimeSetInMiddle(testSetingList(list, count, list.size()/2));
+		result.setTimeSetInTail(testSetingList(list, count, list.size()-1));
 		
-		result.setTimeGetFromHead(testGeting(list, count, 0));
-		result.setTimeGetFromMiddle(testGeting(list, count, list.size()/2));
-		result.setTimeGetFromTail(testGeting(list, count, list.size()-1));
+		result.setTimeGetFromHead(testGetingList(list, count, 0));
+		result.setTimeGetFromMiddle(testGetingList(list, count, list.size()/2));
+		result.setTimeGetFromTail(testGetingList(list, count, list.size()-1));
 		
-		result.setTimeRemoveFromHead(testRemoving(list, count, 0));
-		result.setTimeRemoveFromMiddle(testRemoving(list, count, list.size()/2));
-		result.setTimeRemoveFromTail(testRemoving(list, count, list.size()-1));
+		result.setTimeRemoveFromHead(testRemovingList(list, count, 0));
+		result.setTimeRemoveFromMiddle(testRemovingList(list, count, list.size()/2));
+		result.setTimeRemoveFromTail(testRemovingList(list, count, list.size()-1));
 //		
 		resultList.add(result);
 	}
 
-	private long testAdding(List listTest, int count, int index) {
-		List list = listTest;
-		Iterator iterator = list.iterator();
+	private long testAddingList(List list, int count, int index) {
+		List testList = list;
 		long timeStart = System.nanoTime();
 		for (int i = 0; i < count; i++) {
-			list.add(index, ELEMENT);
+			testList.add(index, ELEMENT);
 		}
 		return  System.nanoTime() - timeStart;
 	}
 
 	
-	private long testSeting(List listTest, int count, int index) {
-		List list = listTest;
-		Iterator iterator = list.iterator();
+	private long testSetingList(List list, int count, int index) {
+		List testList = list;
 		long timeStart = System.nanoTime();
 		for (int i = 0; i < count; i++) {
-			list.set(index, ELEMENT);
+			testList.set(index, ELEMENT);
 		}
 		return  System.nanoTime() - timeStart;
 	}	
 	
-	private long testGeting(List listTest, int count, int index) {
-		List list = listTest;
-		Iterator iterator = list.iterator();
+	private long testGetingList(List list, int count, int index) {
+		List testList = list;
 		long timeStart = System.nanoTime();
 		for (int i = 0; i < count; i++) {
-			list.get(index);
+			testList.get(index);
 		}
 		return  System.nanoTime() - timeStart;
 	}
 	
-	private long testRemoving(List listTest, int count, int index) {
-		List list = listTest;
-		Iterator iterator = list.iterator();
+	private long testRemovingList(List list, int count, int index) {
+		List testList = list;
 		long timeStart = System.nanoTime();
 		for (int i = 0; i < count; i++) {
-			list.get(index);
+			testList.remove(index);
 		}
 		return  System.nanoTime() - timeStart;
 	}
