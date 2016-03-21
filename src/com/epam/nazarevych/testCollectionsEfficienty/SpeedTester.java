@@ -51,7 +51,6 @@ public class SpeedTester {
 		}
 		return  System.nanoTime() - timeStart;
 	}
-
 	
 	private long testSetingList(List list, int count, int index) {
 		List testList = list;

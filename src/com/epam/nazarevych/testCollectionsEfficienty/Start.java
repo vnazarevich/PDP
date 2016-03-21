@@ -33,8 +33,8 @@ public class Start {
 	public static void main(String[] args) {
 		initialisation(100);
 		speedTester.testList(arrayList, 1);
-		speedTester.testList(arrayList, 10000);
 		speedTester.testList(linkedList, 1);
+		speedTester.testList(arrayList, 10000);
 		speedTester.testList(linkedList, 10000);
 
 		

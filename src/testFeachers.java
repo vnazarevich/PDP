@@ -16,6 +16,8 @@ public class testFeachers {
 		arrayList.addAll(Arrays.asList(arr));
 		Collections.fill(arrayList, 1);
 		System.out.println("arrayList.toString() " + arrayList.toString());
+		arrayList.remove(1);
+		System.out.println("arrayList.toString() " + arrayList.toString());
 	}
 
 }
